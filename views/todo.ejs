@@ -15,7 +15,15 @@
 
     <body>
         <h1>This is My First  CICD Pipeline  </h1>
-        
+        <ul>
+            <% todolist.forEach(function(todo, index) { %>
+            <li>
+                <a href="/todo/delete/<%= index %>">✘</a>
+                <a href="/todo/<%= index %>">✎</a>
+                <%- todo %>
+            </li>
+            <% }); %>
+        </ul>
 
         <form action="/todo/add/" method="post">
             <p>
